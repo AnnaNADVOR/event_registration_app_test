@@ -1,0 +1,16 @@
+
+
+.eventsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.eventsListItem {
+    flex-basis: calc((100% - 36px) / 3);
+    width: 100%;
+    border:1px solid rgba(33, 33, 33, .2);
+    border-radius: 4px;   
+    box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);    
+}

@@ -1,0 +1,74 @@
+.formTitle {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.formInputField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.formInputLabel {
+  margin-bottom: 4px;
+  color: #5e6472;
+}
+
+.formInput {
+  padding: 4px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: rgba(0, 0, 0, 0);
+
+  &:hover {
+    border: 1px solid #1982c4;
+    box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+  }
+}
+
+.sendButton {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  background-color: #0077b6;
+  color: #edf6f9;
+  display: block;
+  min-width: 200px;
+  min-height: 50px;
+  padding: 8px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover,
+  :focus {
+    background-color: #1982c4;
+  }
+}
+
+.formError {
+  color: #b8001f;
+  font-size: 16px;
+}
+
+.formFieldset {
+  display: flex;
+  border: none;
+}
+
+.formFieldsetTitle {
+  margin-bottom: 16px;
+  color: #001d3d;
+}
+
+.formFieldsetItem {
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.formFieldsetRadio {
+  margin-right: 4px;
+}
