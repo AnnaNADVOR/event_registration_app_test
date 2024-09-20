@@ -1,25 +1,24 @@
 import { NavLink } from 'react-router-dom';
 import css from './EventItem.module.css';
 
-const EventItem = () => {
+const EventItem = ({eventData}) => {
   return (
     <div className={css.eventCard}>
-      <h2 className={css.eventTitle}>Fitness Fusion</h2>
+      <h2 className={css.eventTitle}>{eventData.title}</h2>
       <div className={css.eventInfoField}>
         <b>Date:</b>
-        <p>March 10, 2024</p>
+        <p>{eventData.date}</p>
       </div>
       <div className={css.eventInfoField}>
-        <b>Place:</b>
-        <p>Local Gymnasium, Riverton</p>
+        <b>Location:</b>
+        <p>{eventData.location}</p>
       </div>
       <p className={css.eventDetails}>
-        A day of fitness classes ranging from yoga to kickboxing. Attendees can
-        sample different workouts and meet local trainers.
+       {eventData.description}
       </p>
       <nav className={css.eventNavigation} >
-        <NavLink className={css.eventLink} to="/register">Register</NavLink>
-        <NavLink className={css.eventLink}>View</NavLink>
+        <NavLink className={css.eventLink} to={`${eventData._id}/registration`}>Register</NavLink>
+        <NavLink className={css.eventLink} to={`${eventData._id}/participants`}>View</NavLink>
       </nav>
     </div>
   );

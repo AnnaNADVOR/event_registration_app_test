@@ -1,0 +1,31 @@
+.participantCard { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;    
+}
+
+.participantLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 16px;
+  background-color: #f2f4f7;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #0077b6;
+  margin-right: 16px;
+}
+
+.participantEmail {
+    color: #5e6472;    
+}
+
+.participantName {
+font-weight: 500;
+margin-bottom: 8px;
+}
