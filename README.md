@@ -1,112 +1,48 @@
-# React homework template
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
+# Events Registration App  
 
-## Створення репозиторію за шаблоном
+Web-based application for events registration.
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
-свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
-`«Create a new repository»`, як показано на зображенні.
++ Events board page: implemented the events board page where users can observe the paginated list of available events. The list of events is previously added to the database manually. Added ability to sort events by: title, event date, organizer. Added infinite scroll pagination.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
++ Event registration page: by clicking on “Register”, users redirected to the event registration page, which contains a registration form with the following fields: full name, email, date of birth, “where did you hear about this event?”.
+Once the form is submitted, the response stored in the MongoDB.
+Added form validation with Yup and Date Picker to date of birth input;
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни поле
-його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`«Create repository from template»`.
++ Event participants page: implemented the event participants page where users can see a list of registered participants. This page available by clicking on the “View” button. Added ability to search participants by full name, email.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як
-показано на зображенні.
+[BackEnd](https://github.com/AnnaNADVOR/events-api)
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+## Level
+### Middle level
 
-Проскроливши сторінку до самого кінця, у секції `«Workflow permissions»` вибери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це
-необхідно для автоматизації процесу деплою проєкту.
+- Everything from the base level
+- Events board page: add ability to sort events by: title,  event date, organizer.
+- Event registration page:
+  - add form validation (come up with your own requirements for fields’ validity);
+  - add DataPicker to Date of birth input;
+- Event participants page: add ability to search participants by full name, email.
+  
+### Advanced level
+- Everything from the middle level
+- Events board page: add infinite scroll pagination (when a user scrolls the page, it automatically loads more events).
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
 
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів і папок
-репозиторію-шаблону. Далі працюй із ним як із будь-яким іншим особистим репозиторієм,
-клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй їх на
-GitHub.
+## Technologies and Libraries Used
 
-## Підготовка до роботи
+![React](https://img.shields.io/badge/React-00308F)
+![ReactDOM](https://img.shields.io/badge/ReactDOM-0066b2)
+![React Router](https://img.shields.io/badge/React%20Router-5072A7)
+![React Redux](https://img.shields.io/badge/React%20Redux-3457D5)
+![Axios](https://img.shields.io/badge/Axios-0047AB)
+![Notiflix](https://img.shields.io/badge/Notiflix-4B9CD3)
+![React Datepicker](https://img.shields.io/badge/React%20Datepicker-216ba5)
+![Date-fns](https://img.shields.io/badge/Date--fns-00BFFF)
+![React Spinners ](https://img.shields.io/badge/React%20Spinners-005A9C)
+![Formik](https://img.shields.io/badge/Formik-4C9AFF)
+![Yup](https://img.shields.io/badge/Yup-003399)
 
-1. Переконайся що на комп'ютері встановлено LTS-версія Node.js.
-   [Завантаж і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проєкту командою `npm install`.
-3. Запусти режим розробки, виконавши команду `npm start`.
-4. Перейди в браузері за адресою [http://localhost:3000](http://localhost:3000).
-   Ця сторінка буде автоматично перезавантажуватися після збереження змін у файлах проєкту.
-
-## Деплой
-
-Продакшн версія проєкту буде автоматично проходити лінтинг, збиратися і
-деплоїтися на GitHub Pages, у гілку `gh-pages`, щоразу, коли оновлюється
-гілка `main`. Наприклад, після прямого пушу або прийнятого пул-реквесту. Для цього
-необхідно у файлі `package.json` відредагувати поле `homepage`, замінивши
-`your_username` і `your_repo_name` на свої, і відправити зміни на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн-версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, сборки або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і
-у вікні, що випадає, перейти за посиланням `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися
-за адресою, вказаною у відредагованій властивості `homepage`. Наприклад, ось
-посилання на живу версію для цього репозиторію
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Якщо відкривається порожня сторінка, переконайся, що у вкладці `Console` немає помилок
-пов'язаних із неправильними шляхами до CSS і JS файлів проєкту (**404**). Швидше 
-за все у тебе неправильне значення властивості `homepage` у файлі `package.json`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши у пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Як це працює
-
-![How it works](./assets/how-it-works.png)
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторія, запускається спеціальний
-   скрипт (GitHub Action) з файла `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується і
-   проходить лінтинг і збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн-версія файлів проєкту
-   відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
-   скрипта буде вказано в чому проблема.
+![Node](https://img.shields.io/badge/Node.js-006A4E)
+![Express](https://img.shields.io/badge/Express-008B8B)
+![Mongoose](https://img.shields.io/badge/Mongoose-228B22)

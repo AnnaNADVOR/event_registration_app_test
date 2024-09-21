@@ -9,7 +9,7 @@ export const getEvents = createAsyncThunk(
       response.page = page;
       return response;
     } catch (error) {
-      console.log('error', error);
+      // console.log('error', error);
       return rejectWithValue(error.message);
     }
   }
