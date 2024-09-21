@@ -1,28 +1,28 @@
 .eventCard {
-    padding: 16px;
+  padding: 16px;
 }
 
 .eventTitle {
-    margin-bottom: 8px;    
+  margin-bottom: 8px;
 }
 
 .eventInfoField {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 8px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
 .eventDetails {
-    color: #5e6472;
-    margin-bottom: 8px;
+  color: #5e6472;
+  margin-bottom: 8px;
 }
 
 .eventNavigation {
-display: flex;
-align-items: center;
-justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .eventLink {
-    color: #0077b6; 
+  color: #0077b6;
 }

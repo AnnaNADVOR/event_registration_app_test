@@ -3,12 +3,13 @@ import * as API from '../services/api';
 
 export const getEvents = createAsyncThunk(
   'events/getEvents',
-  async (_, { rejectWithValue }) => {
+  async ({ limit, page, sortOptions }, { rejectWithValue }) => {
     try {
-      const response = await API.getEvents();
-          return response;
+      const response = await API.getEvents(limit, page, sortOptions);
+      response.page = page;
+      return response;
     } catch (error) {
-        console.log("error",error)
+      console.log('error', error);
       return rejectWithValue(error.message);
     }
   }

@@ -1,6 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useEffect } from 'react';
-// import { useSelector } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Calendar from 'components/Calendar/Calendar';
@@ -9,10 +8,6 @@ import css from './EventRegistrationForm.module.css';
 import { addParticipant } from '../../redux/participants/operations';
 
 import { selectCurrentEvent } from '../../redux/events/selectors';
-import {
-  selectParticipantIsRegistered,
-  selectParticipantsError,
-} from '../../redux/participants/selectors';
 import { getEventById } from '../../redux/events/operations';
 
 const EventRegistrationForm = ({ eventId }) => {
@@ -20,11 +15,9 @@ const EventRegistrationForm = ({ eventId }) => {
 
   useEffect(() => {
     dispatch(getEventById(eventId));
-  }, [dispatch]);
+  }, [dispatch, eventId]);
 
   const currentEvent = useSelector(selectCurrentEvent);
-  // const isRegistered = useSelector(selectParticipantIsRegistered);
-  // const isError = useSelector(selectParticipantsError);
 
   const initialFormValues = {
     userFullName: '',
@@ -34,15 +27,46 @@ const EventRegistrationForm = ({ eventId }) => {
   };
 
   const handleFormSubmit = (values, actions) => {
+    const date = new Date(
+      values.userBirthDate.getFullYear(),
+      values.userBirthDate.getMonth(),
+      values.userBirthDate.getDate() + 1
+    );
+
     const newRegister = {
       eventId: eventId,
       userFullName: values.userFullName.trim(),
       userEmail: values.userEmail.trim(),
-      userBirthDate: values.userBirthDate.toISOString(),
+      userBirthDate: date.toISOString(),
       infoSource: values.sourceOptions,
     };
-    dispatch(addParticipant(newRegister));
-    actions.resetForm();
+
+    dispatch(addParticipant(newRegister)).then(action => {
+      if (action.type === 'participants/addParticipant/rejected') {
+        Notify.failure(`Error! ${action.payload}!`, {
+          fontFamily: 'inherit',
+          borderRadius: '8px',
+          failure: {
+            background: '#eeb9a7',
+            textColor: '#000814',
+            notiflixIconColor: '#b8001f',
+          },
+        });
+      }
+
+      if (action.type === 'participants/addParticipant/fulfilled') {
+        actions.resetForm();
+        Notify.success('Form submitted successfully!', {
+          fontFamily: 'inherit',
+          borderRadius: '8px',
+          success: {
+            background: '#bee3db',
+            textColor: '#000814',
+            notiflixIconColor: '#00A36C',
+          },
+        });
+      }
+    });
   };
 
   return (
@@ -87,9 +111,6 @@ const EventRegistrationForm = ({ eventId }) => {
                 <div className={css.formError}>
                   <ErrorMessage name="userEmail" />
                 </div>
-                {/* {errors.lastName && touched.lastName ? (
-             <div>{errors.lastName}</div>
-           ) : null} */}
               </li>
               <li className={css.formInputField}>
                 <label className={css.formInputLabel} htmlFor="userBirthDate">
@@ -149,27 +170,6 @@ const EventRegistrationForm = ({ eventId }) => {
           </Form>
         </Formik>
       )}
-
-      {/* {isRegistered ? (
-        Notify.success('Form submitted successfully!', {
-          fontFamily: 'inherit',
-          borderRadius: '8px',
-          success: {
-            background: '#bee3db',
-            textColor: '#000814',
-            notiflixIconColor: '#00A36C',
-          },
-        })) : (Notify.failure('Form submitted successfully!', {
-          fontFamily: 'inherit',
-          borderRadius: '8px',
-          failture: {
-            background: '#bee3db',
-            textColor: '#000814',
-            notiflixIconColor: 'red',
-          },
-        })) } */}
-      
-     
     </>
   );
 };

@@ -4,8 +4,8 @@ import { eventsReducer } from './events/slice';
 import { participantsReducer } from './participants/slice';
 
 export const store = configureStore({
-    reducer: {
-        events: eventsReducer,
-        participants: participantsReducer,
-    }
-})
+  reducer: {
+    events: eventsReducer,
+    participants: participantsReducer,
+  },
+});

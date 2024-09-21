@@ -1,24 +1,24 @@
-import { useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { useLocation } from 'react-router-dom';
+import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import EventRegistrationForm from "components/EventRegistrationForm/EventRegistrationForm";
-import GoBackButton from "components/GoBackButton/GoBackButton";
+import EventRegistrationForm from 'components/EventRegistrationForm/EventRegistrationForm';
+import GoBackButton from 'components/GoBackButton/GoBackButton';
 
 const EventRegisterPage = () => {
-    const location = useLocation();
-    const prevLocationRef = useRef(location.state?.from ?? '/');
-    
-    const params = useParams();
-    const currentEventId = params.eventId; 
+  const location = useLocation();
+  const prevLocationRef = useRef(location.state?.from ?? '/');
 
-    return (
-        <section className='section'>
-            <div className='container'>
-                <GoBackButton location={prevLocationRef.current}/>
-                <EventRegistrationForm eventId={currentEventId}/>
-            </div>
-        </section>
-    )
-}
+  const params = useParams();
+  const currentEventId = params.eventId;
 
-export default EventRegisterPage; 
+  return (
+    <section className="section">
+      <div className="container">
+        <GoBackButton location={prevLocationRef.current} />
+        <EventRegistrationForm eventId={currentEventId} />
+      </div>
+    </section>
+  );
+};
+
+export default EventRegisterPage;

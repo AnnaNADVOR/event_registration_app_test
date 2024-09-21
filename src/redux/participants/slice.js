@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { addParticipant, getParticipantsByEventId } from './operations';
 
 const handlePending = state => {
+  state.error = null;
   state.isLoading = true;
 };
 
@@ -18,27 +19,30 @@ const participantsSlice = createSlice({
     participantsList: [],
     error: null,
     isLoading: false,
-    isRegistered: false,
   },
   extraReducers: builder => {
     builder
-      .addCase(addParticipant.pending, handlePending)
-      .addCase(addParticipant.fulfilled, (state, action) => {
+      .addCase(addParticipant.pending, state => {
+        state.error = null;
+        state.isLoading = true;
+      })
+      .addCase(addParticipant.fulfilled, state => {
         state.isLoading = false;
         state.error = null;
-        state.isRegistered = true;
       })
       .addCase(addParticipant.rejected, (state, action) => {
         state.isLoading = false;
-        state.isRegistered = false;
         state.error = action.payload;
       })
 
-      .addCase(getParticipantsByEventId.pending, handlePending)
+      .addCase(getParticipantsByEventId.pending, state => {
+        state.error = null;
+        state.isLoading = true;
+      })
       .addCase(getParticipantsByEventId.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.isRegistered = false;
+
         state.participantsList = action.payload;
       })
       .addCase(getParticipantsByEventId.rejected, handleRejected);

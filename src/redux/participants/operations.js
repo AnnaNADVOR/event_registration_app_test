@@ -16,8 +16,8 @@ export const addParticipant = createAsyncThunk(
         infoSource,
       });
       return response;
-    } catch (error) {
-      return rejectWithValue(error.message);
+    } catch (error) {    
+      return rejectWithValue(error.response.data.message);
     }
   }
 );

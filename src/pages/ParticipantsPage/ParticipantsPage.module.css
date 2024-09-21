@@ -1,13 +1,55 @@
 .participantsList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 14px;}
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+}
 
 .participantsListItem {
-    flex-basis: calc((100% - 32px) / 3);
-    width: 100%;
-    border: 1px solid rgba(33, 33, 33, .2);
-    border-radius: 4px;
+  flex-basis: calc((100% - 32px) / 3);
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+}
+
+.participantsFilter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.filterField {
+  position: relative;
+  display: flex;
+}
+
+.filterFieldInput {
+  padding: 4px 4px 4px 32px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: rgba(0, 0, 0, 0);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border: 1px solid #1982c4;
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+  }
+}
+
+.filterFieldInputLabel {
+  margin-bottom: 8px;
+  color: #5e6472;
+}
+
+.filterFieldInputIcon {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  fill: #0077b6;
+  width: 16px;
+  height: 16px;
 }
