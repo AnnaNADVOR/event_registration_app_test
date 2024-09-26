@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-
 import { getEvents } from '../../redux/events/operations';
 import {
   selectEventsList,
@@ -9,8 +8,8 @@ import {
 } from '../../redux/events/selectors';
 import EventItem from 'components/EventItem/EventItem';
 import css from './EventsPage.module.css';
-import { useSearchParams } from 'react-router-dom';
-import SortedPanel from 'components/SorteredPanel/SorteredPanel';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import SortingPanel from 'components/SortingPanel/SortingPanel';
 import Loader from 'components/Loader/Loader';
 
 const EventsPage = () => {
@@ -18,6 +17,8 @@ const EventsPage = () => {
   const [fetching, setFetching] = useState(true);
   const [sortOptions, setSortOptions] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
+  // const location = useLocation();
+  // console.log(location)
 
   const dispatch = useDispatch();
   const eventsList = useSelector(selectEventsList);
@@ -59,7 +60,7 @@ const EventsPage = () => {
         {isLoader ? (
          <Loader message='loading the best events'/>
         ) : (<>
-            <SortedPanel
+            <SortingPanel
           searchParams={searchParams}
           setSortOptions={setSortOptions}
           setSearchParams={setSearchParams}

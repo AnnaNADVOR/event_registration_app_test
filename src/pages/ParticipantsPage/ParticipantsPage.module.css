@@ -34,8 +34,13 @@
 
   &:hover,
   &:focus {
-    border: 1px solid #1982c4;
+    border: 1px solid var(--accent-hover-color);
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
+  }
+
+  &:hover ~ svg,
+  &:focus ~ svg {
+    fill: var(--accent-hover-color);
   }
 }
 
@@ -49,7 +54,7 @@
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
-  fill: #0077b6;
+  fill: var(--accent-color);
   width: 16px;
   height: 16px;
 }

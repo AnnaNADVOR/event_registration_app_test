@@ -8,7 +8,7 @@ const Loader = ({ message }) => {
         visible={true}
         height="80"
         width="80"
-        color="#0077b6"
+        color="#eb5e28"
         radius="9"
         ariaLabel="three-dots-loading"
       />

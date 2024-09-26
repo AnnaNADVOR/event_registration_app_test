@@ -1,6 +1,6 @@
-.sorteredButtonsList {
+.sortingButtonsList {
   display: flex;
-  align-items: center;
+  align-items:flex-start;
   justify-content: space-around;
   margin-bottom: 32px;
 }

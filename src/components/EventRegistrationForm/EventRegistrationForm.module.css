@@ -23,7 +23,7 @@
 
   &:hover,
   &:focus {
-    border: 1px solid #1982c4;
+    border: 1px solid var(--accent-hover-color);
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   }
 }
@@ -32,7 +32,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
-  background-color: #0077b6;
+  background-color: var(--accent-color);
   color: #edf6f9;
   display: block;
   min-width: 200px;
@@ -46,7 +46,7 @@
 
   &:hover,
   :focus {
-    background-color: #1982c4;
+    background-color: var(--accent-hover-color);
   }
 }
 

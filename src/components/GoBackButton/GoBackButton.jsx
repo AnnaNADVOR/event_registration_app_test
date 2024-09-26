@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { MdKeyboardBackspace } from 'react-icons/md';
+import { IoIosArrowBack } from "react-icons/io";
 
 import css from './GoBackButton.module.css';
 
 const GoBackButton = ({ location }) => {
   return (
     <Link className={css.backButton} to={location}>
-      <MdKeyboardBackspace /> Back
+      <IoIosArrowBack /> Back
     </Link>
   );
 };
