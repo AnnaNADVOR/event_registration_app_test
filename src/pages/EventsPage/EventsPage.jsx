@@ -8,7 +8,7 @@ import {
 } from '../../redux/events/selectors';
 import EventItem from 'components/EventItem/EventItem';
 import css from './EventsPage.module.css';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import SortingPanel from 'components/SortingPanel/SortingPanel';
 import Loader from 'components/Loader/Loader';
 
@@ -17,8 +17,6 @@ const EventsPage = () => {
   const [fetching, setFetching] = useState(true);
   const [sortOptions, setSortOptions] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-  // const location = useLocation();
-  // console.log(location)
 
   const dispatch = useDispatch();
   const eventsList = useSelector(selectEventsList);
