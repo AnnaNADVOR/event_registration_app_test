@@ -34,6 +34,7 @@ const eventsSlice = createSlice({
         state.eventsList = [...state.eventsList, ...action.payload.result];
       })
       .addCase(getEvents.rejected, handleRejected)
+      
       .addCase(getEventById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;

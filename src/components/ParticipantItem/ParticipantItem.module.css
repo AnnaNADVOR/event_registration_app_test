@@ -1,7 +1,8 @@
 .participantCard {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
   padding: 16px;
 }
 
@@ -18,7 +19,7 @@
   font-size: 24px;
   line-height: 30px;
   color: var(--accent-color);
-  margin-right: 16px;
+  margin: 0 auto;
 }
 
 .participantEmail {

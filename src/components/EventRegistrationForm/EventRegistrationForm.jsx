@@ -77,7 +77,7 @@ const EventRegistrationForm = ({ eventId }) => {
           validationSchema={addEventRegisterFormSchema}
           onSubmit={handleFormSubmit}
         >
-          <Form>
+          <Form noValidate>
             <h1 className={css.formTitle}>
               Event "{currentEvent?.title}" registaration
             </h1>
@@ -106,7 +106,7 @@ const EventRegistrationForm = ({ eventId }) => {
                   name="userEmail"
                   as="input"
                   type="email"
-                  autoComplete="off"
+                  autoComplete="off"                 
                 />
                 <div className={css.formError}>
                   <ErrorMessage name="userEmail" />

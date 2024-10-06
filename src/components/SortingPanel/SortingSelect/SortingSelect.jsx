@@ -44,7 +44,6 @@ const SortingSelect = ({
     };
   }, [setShowMenu]);
 
-
   return (
     <div className={css.selectContainer}>
       <button
@@ -55,9 +54,11 @@ const SortingSelect = ({
       >
         Sort by {sortBy}
         {searchParamsValues.order === 'asc' &&
-                  searchParamsValues.sortBy === optionName && shortLabelAsc}
-              {searchParamsValues.order === 'desc' &&
-        searchParamsValues.sortBy === optionName && shortLabelDesc}
+          searchParamsValues.sortBy === optionName &&
+          shortLabelAsc}
+        {searchParamsValues.order === 'desc' &&
+          searchParamsValues.sortBy === optionName &&
+          shortLabelDesc}
         <TbArrowsSort />
       </button>
 

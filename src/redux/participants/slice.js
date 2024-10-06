@@ -36,7 +36,6 @@ const participantsSlice = createSlice({
       .addCase(getParticipantsByEventId.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-
         state.participantsList = action.payload;
       })
       .addCase(getParticipantsByEventId.rejected, handleRejected);

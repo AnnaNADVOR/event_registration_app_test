@@ -9,10 +9,7 @@ const SortingPanel = ({
 }) => {
 
   const handleSort = event => {
-    console.dir(event.currentTarget);
-    console.log('handleSort value', event.currentTarget.value);
-    console.log('handleSort name', event.currentTarget.name);
-    setSortOptions({
+     setSortOptions({
       order: event.currentTarget.value,
       sortBy: event.currentTarget.name,
     });
@@ -51,8 +48,8 @@ const SortingPanel = ({
           optionName="date"
           labelAsc="from latest to earlier"
           labelDesc="from earlier to latest"
-          shortLabelAsc=": latest - earlier"
-          shortLabelDesc=": earlier - latest"
+          shortLabelAsc= ": earlier - latest"
+          shortLabelDesc=": latest - earlier"
           searchParamsValues={params}
         />
       </li>
