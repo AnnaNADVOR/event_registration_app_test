@@ -2,7 +2,6 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://events-api-nj79.onrender.com';
 // axios.defaults.baseURL = 'http://localhost:2000';
 
-
 export async function getEvents(limit, page, sortOptions) {
   const axiosParams = {
     limit,
