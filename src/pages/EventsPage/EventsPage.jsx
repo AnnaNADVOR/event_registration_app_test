@@ -43,7 +43,6 @@ const EventsPage = () => {
         return;
       }
 
-      console.log(generalPageHeight - (heightToTop + viewportHeigh));
       if (
         generalPageHeight - (heightToTop + viewportHeigh) < 1 &&
         total > eventsList.length
