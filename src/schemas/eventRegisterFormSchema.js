@@ -6,7 +6,7 @@ const addEventRegisterFormSchema = Yup.object().shape({
     .trim()
     .required('Full name is required'),
   userEmail: Yup.string()
-    .email('The email address must be in the format "user@.com", contain @  and ".com" or ".net"')
+    .email('The email address must be in the format "user@example.com", contain @  and ".com" or ".net"')
     // .matches(/^[a-zA-Z0-9.-_]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,'Invalid email format. Email must contain @.')
     .required('Email is required')
     .trim(),
