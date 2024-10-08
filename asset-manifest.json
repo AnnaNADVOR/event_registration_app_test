@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/event_registration_app_test/static/css/main.0eb62357.css",
-    "main.js": "/event_registration_app_test/static/js/main.143dcb2b.js",
+    "main.js": "/event_registration_app_test/static/js/main.c5f7f798.js",
     "index.html": "/event_registration_app_test/index.html",
     "main.0eb62357.css.map": "/event_registration_app_test/static/css/main.0eb62357.css.map",
-    "main.143dcb2b.js.map": "/event_registration_app_test/static/js/main.143dcb2b.js.map"
+    "main.c5f7f798.js.map": "/event_registration_app_test/static/js/main.c5f7f798.js.map"
   },
   "entrypoints": [
     "static/css/main.0eb62357.css",
-    "static/js/main.143dcb2b.js"
+    "static/js/main.c5f7f798.js"
   ]
 }
